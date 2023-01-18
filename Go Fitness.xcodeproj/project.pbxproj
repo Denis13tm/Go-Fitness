@@ -8,22 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		F67D01CE296EEB7900F1E0F2 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67D01CD296EEB7900F1E0F2 /* AppDelegate.swift */; };
-		F67D01D0296EEB7900F1E0F2 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67D01CF296EEB7900F1E0F2 /* SceneDelegate.swift */; };
-		F67D01D2296EEB7900F1E0F2 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67D01D1296EEB7900F1E0F2 /* ViewController.swift */; };
-		F67D01D5296EEB7900F1E0F2 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F67D01D3296EEB7900F1E0F2 /* Main.storyboard */; };
+		F67D01D2296EEB7900F1E0F2 /* WorkoutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67D01D1296EEB7900F1E0F2 /* WorkoutVC.swift */; };
 		F67D01D7296EEB7C00F1E0F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F67D01D6296EEB7C00F1E0F2 /* Assets.xcassets */; };
 		F67D01DA296EEB7C00F1E0F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F67D01D8296EEB7C00F1E0F2 /* LaunchScreen.storyboard */; };
+		F6DD7126297823B20032EDD2 /* LabelWithPostfix.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DD7125297823B20032EDD2 /* LabelWithPostfix.swift */; };
+		F6DE80B52970E65900470D74 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DE80B42970E65900470D74 /* CardView.swift */; };
+		F6DE80B72970E82B00470D74 /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DE80B62970E82B00470D74 /* ContainerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		F67D01CA296EEB7900F1E0F2 /* Go Fitness.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Go Fitness.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F67D01CD296EEB7900F1E0F2 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		F67D01CF296EEB7900F1E0F2 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		F67D01D1296EEB7900F1E0F2 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		F67D01D4296EEB7900F1E0F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		F67D01D1296EEB7900F1E0F2 /* WorkoutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutVC.swift; sourceTree = "<group>"; };
 		F67D01D6296EEB7C00F1E0F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F67D01D9296EEB7C00F1E0F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F67D01DB296EEB7C00F1E0F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F6DD7125297823B20032EDD2 /* LabelWithPostfix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelWithPostfix.swift; sourceTree = "<group>"; };
+		F6DE80B42970E65900470D74 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		F6DE80B62970E82B00470D74 /* ContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,14 +59,55 @@
 			isa = PBXGroup;
 			children = (
 				F67D01CD296EEB7900F1E0F2 /* AppDelegate.swift */,
-				F67D01CF296EEB7900F1E0F2 /* SceneDelegate.swift */,
-				F67D01D1296EEB7900F1E0F2 /* ViewController.swift */,
-				F67D01D3296EEB7900F1E0F2 /* Main.storyboard */,
+				F67D01E1296EEBCA00F1E0F2 /* Workout */,
+				F67D01E5296EF96C00F1E0F2 /* Utils */,
 				F67D01D6296EEB7C00F1E0F2 /* Assets.xcassets */,
 				F67D01D8296EEB7C00F1E0F2 /* LaunchScreen.storyboard */,
 				F67D01DB296EEB7C00F1E0F2 /* Info.plist */,
 			);
 			path = "Go Fitness";
+			sourceTree = "<group>";
+		};
+		F67D01E1296EEBCA00F1E0F2 /* Workout */ = {
+			isa = PBXGroup;
+			children = (
+				F67D01E4296EEEA300F1E0F2 /* Model */,
+				F67D01E3296EEEA000F1E0F2 /* View */,
+				F67D01E2296EEE9D00F1E0F2 /* Controller */,
+			);
+			path = Workout;
+			sourceTree = "<group>";
+		};
+		F67D01E2296EEE9D00F1E0F2 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				F67D01D1296EEB7900F1E0F2 /* WorkoutVC.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		F67D01E3296EEEA000F1E0F2 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F6DE80B42970E65900470D74 /* CardView.swift */,
+				F6DE80B62970E82B00470D74 /* ContainerView.swift */,
+				F6DD7125297823B20032EDD2 /* LabelWithPostfix.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F67D01E4296EEEA300F1E0F2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		F67D01E5296EF96C00F1E0F2 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Utils;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +170,6 @@
 			files = (
 				F67D01DA296EEB7C00F1E0F2 /* LaunchScreen.storyboard in Resources */,
 				F67D01D7296EEB7C00F1E0F2 /* Assets.xcassets in Resources */,
-				F67D01D5296EEB7900F1E0F2 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,23 +180,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F67D01D2296EEB7900F1E0F2 /* ViewController.swift in Sources */,
+				F6DE80B72970E82B00470D74 /* ContainerView.swift in Sources */,
+				F6DD7126297823B20032EDD2 /* LabelWithPostfix.swift in Sources */,
+				F67D01D2296EEB7900F1E0F2 /* WorkoutVC.swift in Sources */,
+				F6DE80B52970E65900470D74 /* CardView.swift in Sources */,
 				F67D01CE296EEB7900F1E0F2 /* AppDelegate.swift in Sources */,
-				F67D01D0296EEB7900F1E0F2 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		F67D01D3296EEB7900F1E0F2 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				F67D01D4296EEB7900F1E0F2 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		F67D01D8296EEB7C00F1E0F2 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -292,9 +328,10 @@
 				INFOPLIST_FILE = "Go Fitness/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -304,7 +341,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -320,9 +357,10 @@
 				INFOPLIST_FILE = "Go Fitness/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -332,7 +370,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
