@@ -37,14 +37,17 @@ final class WorkoutVC: UIViewController {
         let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
         navigationController?.navigationBar.titleTextAttributes = textAttributes
         navigationController?.navigationBar.barTintColor = UIColor(named: "baseColor")
-//        tabBarController?.tabBar.barTintColor = UIColor.brown
-//        tabBarController?.tabBar.tintColor = UIColor.yellow
+        tabBarController?.tabBar.barTintColor = UIColor.brown
+        tabBarController?.tabBar.tintColor = UIColor.yellow
         
-        navigationItem.rightBarButtonItem = UIBarButtonItem(
+        let addButton = UIBarButtonItem(
             title: "Add",
             style: .plain,
             target: self,
             action: #selector(addAction))
+        
+        addButton.tintColor = .green
+        navigationItem.rightBarButtonItem = addButton
     }
     
     private func setupContainerView() {
@@ -102,7 +105,7 @@ final class WorkoutVC: UIViewController {
     //MARK: -  Actions
     
     @objc private func addAction() {
-        
+        navigationController?.pushViewController(CreateWorkoutVC(), animated: true)
     }
 
 
