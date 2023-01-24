@@ -10,7 +10,10 @@ import UIKit
 final class WorkoutVC: UIViewController {
 
     var safeArea: UILayoutGuide!
-    let cardView = CardView()
+    let workoutView = WorkoutCell()
+    let tableView = UITableView()
+    
+    let nameList = ["Adam", "Shown", "Otabek", "Chaeyoen"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -23,7 +26,6 @@ final class WorkoutVC: UIViewController {
 //        setGradientBackground()
         
         setupNavigation()
-        setupContainerView()
         setupTableView()
     }
     
@@ -31,24 +33,39 @@ final class WorkoutVC: UIViewController {
         navigationItem.title = "Workout"
         let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
         navigationController?.navigationBar.titleTextAttributes = textAttributes
+        navigationController?.navigationBar.barTintColor = UIColor(named: "baseColor")
+//        tabBarController?.tabBar.barTintColor = UIColor.brown
+//        tabBarController?.tabBar.tintColor = UIColor.yellow
     }
     
     private func setupContainerView() {
-        view.addSubview(cardView)
+        view.addSubview(workoutView)
         
-        cardView.translatesAutoresizingMaskIntoConstraints = false
-        let top = cardView.topAnchor.constraint(equalTo: safeArea.topAnchor)
-        let leading = cardView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor)
-        let trailing = cardView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor)
-        let height = cardView.heightAnchor.constraint(equalToConstant: 180)
+        workoutView.translatesAutoresizingMaskIntoConstraints = false
+        let top = workoutView.topAnchor.constraint(equalTo: safeArea.topAnchor, constant: 15)
+        let leading = workoutView.leadingAnchor.constraint(equalTo: safeArea.leadingAnchor)
+        let trailing = workoutView.trailingAnchor.constraint(equalTo: safeArea.trailingAnchor)
+        let height = workoutView.heightAnchor.constraint(equalToConstant: 180)
         NSLayoutConstraint.activate([top, leading, trailing, height])
-        
-        
     }
     
     private func setupTableView() {
+        view.addSubview(tableView)
         
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        let top = tableView.topAnchor.constraint(equalTo: safeArea.topAnchor)
+        let leading = tableView.leadingAnchor.constraint(equalTo: view.leadingAnchor)
+        let trailing = tableView.trailingAnchor.constraint(equalTo: view.trailingAnchor)
+        let bottom = tableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        NSLayoutConstraint.activate([top, leading, trailing, bottom])
+        
+        tableView.backgroundColor = .clear
+        
+        tableView.register(WorkoutCell.self, forCellReuseIdentifier: "cellID")
+        tableView.dataSource = self
+        tableView.delegate = self
     }
+    
     
     private func setGradientBackground() {
         let colorTop =  UIColor(named: "topColor")!.cgColor
@@ -63,6 +80,33 @@ final class WorkoutVC: UIViewController {
     }
 
 
+}
+
+extension WorkoutVC: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return nameList.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellID", for: indexPath)
+        
+        guard let workoutCell = cell as? WorkoutCell else {
+            return cell
+        }
+        
+        let model = WorkoutCellModel(
+            title: nameList[indexPath.row],
+            time: Int.random(in: 7...23),
+            exercises: Int.random(in: 3...5))
+        
+        workoutCell.set(model: model)
+        
+        return workoutCell
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 180
+    }
 }
 
 

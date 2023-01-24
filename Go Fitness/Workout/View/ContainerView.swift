@@ -31,7 +31,7 @@ final class ContainerView: UIView {
         layer.shadowOffset = CGSize(width: 3, height: 3)
         layer.masksToBounds = false
         
-//        setupUpperShadowLayer()
+        setupUpperShadowLayer()
     }
     
     private func setupUpperShadowLayer() {
@@ -47,8 +47,8 @@ final class ContainerView: UIView {
         upperShadowView.layer.backgroundColor = (UIColor(named: "mainColor")?.cgColor)
         upperShadowView.layer.cornerRadius = 10
         upperShadowView.layer.shadowColor = UIColor.white.cgColor
-        upperShadowView.layer.shadowRadius = 4.0
-        upperShadowView.layer.shadowOpacity = 0.5
+        upperShadowView.layer.shadowRadius = 3.0
+        upperShadowView.layer.shadowOpacity = 0.3
         upperShadowView.layer.shadowOffset = CGSize(width: -3, height: -3)
         upperShadowView.layer.masksToBounds = false
         

@@ -11,8 +11,10 @@
 		F67D01D2296EEB7900F1E0F2 /* WorkoutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F67D01D1296EEB7900F1E0F2 /* WorkoutVC.swift */; };
 		F67D01D7296EEB7C00F1E0F2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F67D01D6296EEB7C00F1E0F2 /* Assets.xcassets */; };
 		F67D01DA296EEB7C00F1E0F2 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F67D01D8296EEB7C00F1E0F2 /* LaunchScreen.storyboard */; };
+		F6AB630A297F7C5E00A70334 /* WorkoutCellModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AB6309297F7C5E00A70334 /* WorkoutCellModel.swift */; };
+		F6AB630D297F89B400A70334 /* SQLite in Frameworks */ = {isa = PBXBuildFile; productRef = F6AB630C297F89B400A70334 /* SQLite */; };
 		F6DD7126297823B20032EDD2 /* LabelWithPostfix.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DD7125297823B20032EDD2 /* LabelWithPostfix.swift */; };
-		F6DE80B52970E65900470D74 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DE80B42970E65900470D74 /* CardView.swift */; };
+		F6DD712829783A370032EDD2 /* WorkoutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DD712729783A370032EDD2 /* WorkoutCell.swift */; };
 		F6DE80B72970E82B00470D74 /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DE80B62970E82B00470D74 /* ContainerView.swift */; };
 /* End PBXBuildFile section */
 
@@ -23,8 +25,9 @@
 		F67D01D6296EEB7C00F1E0F2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		F67D01D9296EEB7C00F1E0F2 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		F67D01DB296EEB7C00F1E0F2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F6AB6309297F7C5E00A70334 /* WorkoutCellModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCellModel.swift; sourceTree = "<group>"; };
 		F6DD7125297823B20032EDD2 /* LabelWithPostfix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelWithPostfix.swift; sourceTree = "<group>"; };
-		F6DE80B42970E65900470D74 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
+		F6DD712729783A370032EDD2 /* WorkoutCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCell.swift; sourceTree = "<group>"; };
 		F6DE80B62970E82B00470D74 /* ContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -33,6 +36,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6AB630D297F89B400A70334 /* SQLite in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -89,9 +93,9 @@
 		F67D01E3296EEEA000F1E0F2 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				F6DE80B42970E65900470D74 /* CardView.swift */,
 				F6DE80B62970E82B00470D74 /* ContainerView.swift */,
 				F6DD7125297823B20032EDD2 /* LabelWithPostfix.swift */,
+				F6DD712729783A370032EDD2 /* WorkoutCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -99,6 +103,7 @@
 		F67D01E4296EEEA300F1E0F2 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				F6AB6309297F7C5E00A70334 /* WorkoutCellModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -126,6 +131,9 @@
 			dependencies = (
 			);
 			name = "Go Fitness";
+			packageProductDependencies = (
+				F6AB630C297F89B400A70334 /* SQLite */,
+			);
 			productName = "Go Fitness";
 			productReference = F67D01CA296EEB7900F1E0F2 /* Go Fitness.app */;
 			productType = "com.apple.product-type.application";
@@ -154,6 +162,9 @@
 				Base,
 			);
 			mainGroup = F67D01C1296EEB7800F1E0F2;
+			packageReferences = (
+				F6AB630B297F89B400A70334 /* XCRemoteSwiftPackageReference "SQLite.swift" */,
+			);
 			productRefGroup = F67D01CB296EEB7900F1E0F2 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -180,10 +191,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F6AB630A297F7C5E00A70334 /* WorkoutCellModel.swift in Sources */,
 				F6DE80B72970E82B00470D74 /* ContainerView.swift in Sources */,
 				F6DD7126297823B20032EDD2 /* LabelWithPostfix.swift in Sources */,
 				F67D01D2296EEB7900F1E0F2 /* WorkoutVC.swift in Sources */,
-				F6DE80B52970E65900470D74 /* CardView.swift in Sources */,
+				F6DD712829783A370032EDD2 /* WorkoutCell.swift in Sources */,
 				F67D01CE296EEB7900F1E0F2 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -396,6 +408,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		F6AB630B297F89B400A70334 /* XCRemoteSwiftPackageReference "SQLite.swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/stephencelis/SQLite.swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.9.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		F6AB630C297F89B400A70334 /* SQLite */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F6AB630B297F89B400A70334 /* XCRemoteSwiftPackageReference "SQLite.swift" */;
+			productName = SQLite;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F67D01C2296EEB7800F1E0F2 /* Project object */;
 }
