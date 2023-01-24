@@ -9,22 +9,25 @@ import UIKit
 
 final class WorkoutVC: UIViewController {
 
-    var safeArea: UILayoutGuide!
-    let workoutView = WorkoutCell()
-    let tableView = UITableView()
+    private var safeArea: UILayoutGuide!
+    private let workoutView = WorkoutCell()
+    private let tableView = UITableView()
+    private let workoutDispatcher = try? WorkoutDispatcher()
     
-    let nameList = ["Adam", "Shown", "Otabek", "Chaeyoen"]
+    var listWorkout = ListWorkoutResponse(list: [])
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
+        setupData()
     }
+    
+    //MARK: - Actions...
     
     private func setupView() {
         safeArea = view.layoutMarginsGuide
         view.backgroundColor = UIColor(named: "baseColor")
 //        setGradientBackground()
-        
         setupNavigation()
         setupTableView()
     }
@@ -36,6 +39,12 @@ final class WorkoutVC: UIViewController {
         navigationController?.navigationBar.barTintColor = UIColor(named: "baseColor")
 //        tabBarController?.tabBar.barTintColor = UIColor.brown
 //        tabBarController?.tabBar.tintColor = UIColor.yellow
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(
+            title: "Add",
+            style: .plain,
+            target: self,
+            action: #selector(addAction))
     }
     
     private func setupContainerView() {
@@ -66,6 +75,17 @@ final class WorkoutVC: UIViewController {
         tableView.delegate = self
     }
     
+    //MARK: - Logic
+    
+    func setupData() {
+        guard let dispatcher = workoutDispatcher else {
+            print("\(self): dispatcher was nil.")
+            return
+        }
+        
+        listWorkout = dispatcher.list(request: ListWorkoutRequest())
+        tableView.reloadData()
+    }
     
     private func setGradientBackground() {
         let colorTop =  UIColor(named: "topColor")!.cgColor
@@ -78,26 +98,28 @@ final class WorkoutVC: UIViewController {
                 
         self.view.layer.insertSublayer(gradientLayer, at:0)
     }
+    
+    //MARK: -  Actions
+    
+    @objc private func addAction() {
+        
+    }
 
 
 }
 
 extension WorkoutVC: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return nameList.count
+        return listWorkout.list.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellID", for: indexPath)
         
-        guard let workoutCell = cell as? WorkoutCell else {
-            return cell
-        }
+        guard let workoutCell = cell as? WorkoutCell else { return cell }
         
-        let model = WorkoutCellModel(
-            title: nameList[indexPath.row],
-            time: Int.random(in: 7...23),
-            exercises: Int.random(in: 3...5))
+        let response = listWorkout.list[indexPath.row]
+        let model = WorkoutModel(title: response.title)
         
         workoutCell.set(model: model)
         

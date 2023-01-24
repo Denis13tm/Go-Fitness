@@ -28,13 +28,13 @@ final class WorkoutCell: UITableViewCell {
     
     //MARK: - Public
     
-    func set(model: WorkoutCellModel) {
+    func set(model: WorkoutModel) {
         titleLabel.text = model.title
         
-        let timeLabelModel = LabelWithPostfix.Model(title: model.time.description, postFix: .min)
+        let timeLabelModel = LabelWithPostfix.Model(title: "32", postFix: .min)
         timeLabel.set(model: timeLabelModel)
         
-        let exerciseLabelModel = LabelWithPostfix.Model(title: model.exercises.description, postFix: .exercise)
+        let exerciseLabelModel = LabelWithPostfix.Model(title: "4", postFix: .exercise)
         exerciseLabel.set(model: exerciseLabelModel)
     }
     
