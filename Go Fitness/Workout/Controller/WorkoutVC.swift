@@ -36,7 +36,7 @@ final class WorkoutVC: UIViewController {
         navigationItem.title = "Workout"
         let textAttributes = [NSAttributedString.Key.foregroundColor:UIColor.white]
         navigationController?.navigationBar.titleTextAttributes = textAttributes
-        navigationController?.navigationBar.barTintColor = UIColor(named: "baseColor")
+        navigationController?.navigationBar.barTintColor = UIColor(named: "mainColor")
         tabBarController?.tabBar.barTintColor = UIColor.brown
         tabBarController?.tabBar.tintColor = UIColor.yellow
         

@@ -10,7 +10,7 @@ import UIKit
 final class CreateWorkoutVC: UIViewController {
     private var safeArea: UILayoutGuide!
     private let titleLabel = UILabel()
-    private let workoutNameTF = UITextField()
+    private let workoutNameTF = TextField()
     private let saveAndCancelButtons = SaveAndCancelButton()
     
     
@@ -61,8 +61,11 @@ final class CreateWorkoutVC: UIViewController {
         let height = workoutNameTF.heightAnchor.constraint(equalToConstant: 60)
         NSLayoutConstraint.activate([top, leading, trailing, height])
         
-        workoutNameTF.backgroundColor = UIColor(named: "baseColor")
+        workoutNameTF.backgroundColor = UIColor(named: "mainColor")
         workoutNameTF.layer.cornerRadius = 10
+        workoutNameTF.font = .systemFont(ofSize: 26)
+        workoutNameTF.textColor = .white
+        
         workoutNameTF.layer.shadowColor = UIColor.black.cgColor
         workoutNameTF.layer.shadowRadius = 2.0
         workoutNameTF.layer.shadowOpacity = 0.5
