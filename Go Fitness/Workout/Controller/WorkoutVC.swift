@@ -16,10 +16,14 @@ final class WorkoutVC: UIViewController {
     
     var listWorkout = ListWorkoutResponse(list: [])
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupData()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupView()
-        setupData()
     }
     
     //MARK: - Actions...
@@ -27,9 +31,11 @@ final class WorkoutVC: UIViewController {
     private func setupView() {
         safeArea = view.layoutMarginsGuide
         view.backgroundColor = UIColor(named: "baseColor")
+        
 //        setGradientBackground()
         setupNavigation()
         setupTableView()
+        setupData()
     }
     
     private func setupNavigation() {
@@ -107,7 +113,6 @@ final class WorkoutVC: UIViewController {
     @objc private func addAction() {
         navigationController?.pushViewController(CreateWorkoutVC(), animated: true)
     }
-
 
 }
 

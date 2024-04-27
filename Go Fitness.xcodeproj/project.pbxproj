@@ -24,6 +24,7 @@
 		F6AB632529800A8600A70334 /* CreateWorkoutVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AB632429800A8600A70334 /* CreateWorkoutVC.swift */; };
 		F6AB63272980165F00A70334 /* SaveAndCancelButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AB63262980165F00A70334 /* SaveAndCancelButton.swift */; };
 		F6AB6329298021C000A70334 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AB6328298021C000A70334 /* TextField.swift */; };
+		F6AB632B29804FAC00A70334 /* MockDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6AB632A29804FAC00A70334 /* MockDataManager.swift */; };
 		F6DD7126297823B20032EDD2 /* LabelWithPostfix.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DD7125297823B20032EDD2 /* LabelWithPostfix.swift */; };
 		F6DD712829783A370032EDD2 /* WorkoutCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DD712729783A370032EDD2 /* WorkoutCell.swift */; };
 		F6DE80B72970E82B00470D74 /* ContainerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F6DE80B62970E82B00470D74 /* ContainerView.swift */; };
@@ -48,6 +49,7 @@
 		F6AB632429800A8600A70334 /* CreateWorkoutVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateWorkoutVC.swift; sourceTree = "<group>"; };
 		F6AB63262980165F00A70334 /* SaveAndCancelButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SaveAndCancelButton.swift; sourceTree = "<group>"; };
 		F6AB6328298021C000A70334 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
+		F6AB632A29804FAC00A70334 /* MockDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockDataManager.swift; sourceTree = "<group>"; };
 		F6DD7125297823B20032EDD2 /* LabelWithPostfix.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LabelWithPostfix.swift; sourceTree = "<group>"; };
 		F6DD712729783A370032EDD2 /* WorkoutCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkoutCell.swift; sourceTree = "<group>"; };
 		F6DE80B62970E82B00470D74 /* ContainerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContainerView.swift; sourceTree = "<group>"; };
@@ -141,6 +143,7 @@
 				F6AB630E297F8AB600A70334 /* DatabaseManager.swift */,
 				F6AB63262980165F00A70334 /* SaveAndCancelButton.swift */,
 				F6AB6328298021C000A70334 /* TextField.swift */,
+				F6AB632A29804FAC00A70334 /* MockDataManager.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -273,6 +276,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F6AB6321297FC6D300A70334 /* WorkoutDispatcher.swift in Sources */,
+				F6AB632B29804FAC00A70334 /* MockDataManager.swift in Sources */,
 				F6AB630A297F7C5E00A70334 /* WorkoutModel.swift in Sources */,
 				F6DE80B72970E82B00470D74 /* ContainerView.swift in Sources */,
 				F6DD7126297823B20032EDD2 /* LabelWithPostfix.swift in Sources */,

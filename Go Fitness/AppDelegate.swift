@@ -18,6 +18,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.rootViewController = UINavigationController(rootViewController: WorkoutVC())
         window?.makeKeyAndVisible()
         
+        MockDataManager.createWorkouts()
+        
         return true
     }
 

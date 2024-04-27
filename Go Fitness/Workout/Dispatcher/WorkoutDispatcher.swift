@@ -29,7 +29,7 @@ struct WorkoutDispatcher {
     
     // Get list of all workout models
     func list(request: ListWorkoutRequest) -> ListWorkoutResponse {
-        let list = try workoutRepository.getList()
+        let list = workoutRepository.list()
         return ListWorkoutResponse(list: list)
     }
     

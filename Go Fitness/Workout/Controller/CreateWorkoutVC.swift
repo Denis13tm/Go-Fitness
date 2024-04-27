@@ -12,7 +12,7 @@ final class CreateWorkoutVC: UIViewController {
     private let titleLabel = UILabel()
     private let workoutNameTF = TextField()
     private let saveAndCancelButtons = SaveAndCancelButton()
-    
+    private let workoutDispatcher = try? WorkoutDispatcher()
     
     override func viewDidLoad() {
          super.viewDidLoad()
@@ -71,6 +71,7 @@ final class CreateWorkoutVC: UIViewController {
         workoutNameTF.layer.shadowOpacity = 0.5
         workoutNameTF.layer.shadowOffset = CGSize(width: 3, height: 3)
         workoutNameTF.layer.masksToBounds = false
+        workoutNameTF.addTarget(self, action: #selector(nameAction), for: .editingChanged )
     }
     
     private func setupSaveAndCancelButtons() {
@@ -85,6 +86,11 @@ final class CreateWorkoutVC: UIViewController {
         saveAndCancelButtons.delegate = self
     }
     
+    //MARK: - Actions
+    
+    @objc func nameAction(_ textField: UITextField) {
+        
+    }
     
 }
 
@@ -95,6 +101,18 @@ extension CreateWorkoutVC: SaveAndCancelButtonsDelegate {
     }
     
     func onSave() {
-        print("Saved !!!")
+        if let text = workoutNameTF.text, !text.isEmpty {
+            let request = CreateWorkoutRequest(title: text)
+            
+            guard let dispatcher = workoutDispatcher else {
+                print("\(self): workoutDispatcher was nil")
+                return
+            }
+            guard ((try? workoutDispatcher?.create(request: request)) != nil) else {
+                print("Show Model saying: 'Couldn't save workout, please reach out to Developer!'")
+                return
+            }
+            navigationController?.popViewController(animated: true)
+        }
     }
 }

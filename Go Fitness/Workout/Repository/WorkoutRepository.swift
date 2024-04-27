@@ -17,6 +17,7 @@ final class WorkoutRepository {
     
     static func dropTable(in db: Connection) throws {
         try db.execute("DROP TABLE '\(WorkoutModel.tableName)'")
+        print("Dropped Table: \(WorkoutRepository.self)")
     }
     
     init(db: Connection) throws {
@@ -28,13 +29,10 @@ final class WorkoutRepository {
     //MARK: - Private
     
     private func setup() throws {
-    
-        
         try db.run(table.create(ifNotExists: true) { table in
             table.column(id, primaryKey: true)
             table.column(title)
         })
-        
         print("CREATE TABLE (if it didn't exist): \(WorkoutModel.tableName)")
     }
     
@@ -47,7 +45,7 @@ final class WorkoutRepository {
         return WorkoutModel(id: Int(rowID), title: model.title)
     }
     
-    func getList() -> [WorkoutModel] {
+    func list() -> [WorkoutModel] {
         do {
             return try db.prepare(table).map { workout in
                 return WorkoutModel(id: Int(workout[id]), title: workout[title])
